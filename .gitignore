@@ -15,7 +15,7 @@ mosquitto/data/
 #mosquitto/log/
 
 zigbee2mqtt/data/log/
-zigbee2mqtt/state.json
+zigbee2mqtt/data/state.json
 
 zwave2mqtt/
 
