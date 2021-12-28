@@ -2,6 +2,9 @@
  * zwave Homebridge-MQTTThing Codec (encoder/decoder)
  * Codecs allow custom logic to be applied to accessories in mqttthing, rather like apply() functions, 
  * but in the convenience of a stand-alone JavaScript file.
+ * 
+ * todo:
+ * document the system
  */
 
  'use strict';
