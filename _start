@@ -1,0 +1,5 @@
+docker-compose -f mosquitto/docker-compose.yml  up -d
+docker-compose -f zigbee2mqtt/docker-compose.yml  up -d
+#docker-compose -f zwave2mqtt/docker-compose.yml  up -d
+docker-compose -f zwavejs2mqtt/docker-compose.yml  up -d
+docker-compose -f homebridge/docker-compose.yml  up -d

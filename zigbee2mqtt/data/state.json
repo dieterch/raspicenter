@@ -1,0 +1,167 @@
+{
+    "0x086bd7fffe060f26": {
+        "state": "ON",
+        "brightness": 122,
+        "update": {
+            "state": "available"
+        },
+        "update_available": true
+    },
+    "0x086bd7fffe008bba": {
+        "state": "ON",
+        "brightness": 254,
+        "update": {
+            "state": "available"
+        },
+        "update_available": true,
+        "power_on_behavior": "on"
+    },
+    "0x000b57fffeece596": {
+        "color_mode": "color_temp",
+        "state": "OFF",
+        "color_temp": 268,
+        "color_temp_startup": 65535,
+        "update": {
+            "state": "available"
+        },
+        "update_available": true,
+        "brightness": 254,
+        "power_on_behavior": "previous"
+    },
+    "0x0017880108704513": {
+        "battery": 100,
+        "update": {
+            "state": "available"
+        },
+        "update_available": true,
+        "counter": 1,
+        "brightness": 223
+    },
+    "0x0017880104b60bfa": {
+        "battery": 67,
+        "occupancy": true,
+        "occupancy_timeout": 0,
+        "motion_sensitivity": "high",
+        "temperature": 19,
+        "illuminance": 7051,
+        "illuminance_lux": 5,
+        "update": {
+            "state": "idle"
+        },
+        "update_available": false,
+        "led_indication": true
+    },
+    "0x0017880104f75e09": {
+        "battery": 87.5,
+        "update": {
+            "state": "idle"
+        },
+        "update_available": false,
+        "counter": 1,
+        "brightness": 223
+    },
+    "0x000b57fffec7f9e4": {
+        "color_mode": "xy",
+        "state": "ON",
+        "brightness": 254,
+        "color": {
+            "x": "0.3119",
+            "y": "0.3122"
+        },
+        "update": {
+            "state": "available"
+        },
+        "update_available": true,
+        "power_on_behavior": "on"
+    },
+    "0x90fd9ffffe64b23c": {
+        "color_mode": "xy",
+        "state": "ON",
+        "brightness": 254,
+        "update": {
+            "state": "available"
+        },
+        "update_available": true,
+        "color": {
+            "x": "0.3119",
+            "y": "0.3122"
+        },
+        "power_on_behavior": "on",
+        "color_temp": 250
+    },
+    "0x90fd9ffffe3491d4": {
+        "color_mode": "color_temp",
+        "update": {
+            "state": "available"
+        },
+        "update_available": true,
+        "state": "ON",
+        "brightness": 125,
+        "color_temp": 336,
+        "power_on_behavior": "previous"
+    },
+    "0x000b57fffef58848": {
+        "color_mode": "color_temp",
+        "update": {
+            "state": "available"
+        },
+        "update_available": true,
+        "state": "ON",
+        "brightness": 125,
+        "color_temp": 336,
+        "power_on_behavior": "previous"
+    },
+    "0x000b57fffef599f6": {
+        "color_mode": "color_temp",
+        "state": "ON",
+        "brightness": 125,
+        "color_temp": 336,
+        "update": {
+            "state": "available"
+        },
+        "update_available": true,
+        "power_on_behavior": "previous"
+    },
+    "0x90fd9ffffe04a728": {
+        "color_mode": "color_temp",
+        "update": {
+            "state": "available"
+        },
+        "update_available": true,
+        "state": "ON",
+        "brightness": 155,
+        "color_temp": 336,
+        "power_on_behavior": "on"
+    },
+    "0x000b3cfffef795b3": {
+        "update": {
+            "state": "available"
+        },
+        "update_available": true,
+        "state": "ON",
+        "brightness": 135,
+        "power_on_behavior": "on"
+    },
+    "0x000d6ffffea91d0a": {
+        "update": {
+            "state": "available"
+        },
+        "update_available": true,
+        "state": "ON",
+        "brightness": 175,
+        "power_on_behavior": "on"
+    },
+    "0x90fd9ffffe08cdc9": {
+        "update": {
+            "state": "available"
+        },
+        "update_available": true
+    },
+    "0x90fd9ffffe20c63b": {
+        "battery": 87,
+        "update": {
+            "state": "available"
+        },
+        "update_available": true
+    }
+}

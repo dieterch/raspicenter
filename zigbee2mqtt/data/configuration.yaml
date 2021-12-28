@@ -1,0 +1,57 @@
+homeassistant: false
+permit_join: false
+mqtt:
+  base_topic: zigbee2mqtt
+  server: mqtt://localhost:1883
+  keepalive: 60
+  reject_unauthorized: false
+  version: 4
+  include_device_information: false
+frontend:
+  port: 8080
+  host: 0.0.0.0
+serial:
+  port: /dev/ttyACM0
+devices:
+  '0x086bd7fffe060f26':
+    friendly_name: StehlampeOben
+  '0x086bd7fffe008bba':
+    friendly_name: StehlampeUnten
+  '0x000b57fffeece596':
+    friendly_name: StehlampeEsszimmer
+  '0x0017880108704513':
+    friendly_name: FlurSchalter
+    legacy: true
+    optimistic: false
+  '0x0017880104b60bfa':
+    friendly_name: FlurBewegungsmelder
+    temperature_precision: 0
+    illuminance_precision: 0
+    illuminance_lux_precision: 0
+    optimistic: false
+  '0x0017880104f75e09':
+    friendly_name: Wohnzimmerschalter
+    legacy: true
+  '0x000b57fffec7f9e4':
+    friendly_name: Esszimmer5
+    color_sync: false
+  '0x90fd9ffffe64b23c':
+    friendly_name: Esszimmer4
+    color_sync: true
+  '0x90fd9ffffe3491d4':
+    friendly_name: Wohnzimmer3
+  '0x000b57fffef58848':
+    friendly_name: Wohnzimmer2
+  '0x000b57fffef599f6':
+    friendly_name: Wohnzimmer1
+  '0x90fd9ffffe04a728':
+    friendly_name: Esszimmer2
+  '0x000b3cfffef795b3':
+    friendly_name: Esszimmer1
+  '0x000d6ffffea91d0a':
+    friendly_name: Esszimmer3
+  '0x90fd9ffffe08cdc9':
+    friendly_name: IkeaSchalter1
+  '0x90fd9ffffe20c63b':
+    friendly_name: IkeaSchalter2
+availability: true
