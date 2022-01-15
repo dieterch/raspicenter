@@ -3,3 +3,4 @@ docker-compose -f zigbee2mqtt/docker-compose.yml  down
 #docker-compose -f zwave2mqtt/docker-compose.yml  down
 docker-compose -f zwavejs2mqtt/docker-compose.yml  down
 docker-compose -f homebridge/docker-compose.yml  down
+docker-compose -f redis/docker-compose.yml  down
