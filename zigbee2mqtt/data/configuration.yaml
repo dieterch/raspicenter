@@ -19,16 +19,6 @@ devices:
     friendly_name: StehlampeUnten
   '0x000b57fffeece596':
     friendly_name: StehlampeEsszimmer
-  '0x0017880108704513':
-    friendly_name: FlurSchalter
-    legacy: true
-    optimistic: false
-  '0x0017880104b60bfa':
-    friendly_name: FlurBewegungsmelder
-    temperature_precision: 0
-    illuminance_precision: 0
-    illuminance_lux_precision: 0
-    optimistic: false
   '0x0017880104f75e09':
     friendly_name: Wohnzimmerschalter
     legacy: true
@@ -38,12 +28,6 @@ devices:
   '0x90fd9ffffe64b23c':
     friendly_name: Esszimmer4
     color_sync: true
-  '0x90fd9ffffe3491d4':
-    friendly_name: Wohnzimmer3
-  '0x000b57fffef58848':
-    friendly_name: Wohnzimmer2
-  '0x000b57fffef599f6':
-    friendly_name: Wohnzimmer1
   '0x90fd9ffffe04a728':
     friendly_name: Esszimmer2
   '0x000b3cfffef795b3':

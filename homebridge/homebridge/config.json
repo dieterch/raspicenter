@@ -7,6 +7,14 @@
     },
     "accessories": [
         {
+            "name": "test",
+            "stateful": true,
+            "reverse": false,
+            "time": 1000,
+            "resettable": false,
+            "accessory": "DummySwitch"
+        },
+        {
             "_": "_____ Beginn der Sektion Küche ____",
             "accessory": "mqttthing",
             "type": "switch",
@@ -171,8 +179,8 @@
         {
             "accessory": "mqttthing",
             "type": "switch",
-            "name": "Wohnzimmer Regal Schalter",
-            "caption": "Wohnzimmer Regal Schalter",
+            "name": "Wohnzimmer Verstaerker",
+            "caption": "Wohnzimmer Verstaerker",
             "topics": {
                 "getOn": "shellies/shellyplug-s-040D25/relay/0",
                 "setOn": "shellies/shellyplug-s-040D25/relay/0/command"
@@ -184,8 +192,8 @@
         {
             "accessory": "mqttthing",
             "type": "switch",
-            "name": "Wohnzimmer Christbaum Schalter",
-            "caption": "Wohnzimmer Christbaum Schalter",
+            "name": "Wohnzimmer Funk Gitarrenkabel",
+            "caption": "Wohnzimmer Funk Gitarrenkabel",
             "topics": {
                 "getOn": "shellies/shellyplug-s-6A6374/relay/0",
                 "setOn": "shellies/shellyplug-s-6A6374/relay/0/command"
@@ -581,14 +589,6 @@
             "logMqtt": false,
             "codec": "js/tradfri.js",
             "_": "_____ Ende der Sektion Esszimmer ____"
-        },
-        {
-            "name": "test",
-            "stateful": true,
-            "reverse": false,
-            "time": 1000,
-            "resettable": false,
-            "accessory": "DummySwitch"
         }
     ],
     "platforms": [
