@@ -17,8 +17,6 @@ devices:
     friendly_name: StehlampeOben
   '0x086bd7fffe008bba':
     friendly_name: StehlampeUnten
-  '0x000b57fffeece596':
-    friendly_name: StehlampeEsszimmer
   '0x0017880104f75e09':
     friendly_name: Wohnzimmerschalter
     legacy: true
@@ -39,3 +37,5 @@ devices:
   '0x90fd9ffffe20c63b':
     friendly_name: IkeaSchalter2
 availability: true
+blocklist:
+  - '0x000b57fffeece596'
