@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  nodered:
+    image: nodered/node-red:latest
+    container_name: nodered
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+#      - ./config:/nodered/config
+      - ./data:/data
+#      - ./log:/nodered/log
+#    ports:
+#      - "1883:1883"
+#      - "9001:9001"

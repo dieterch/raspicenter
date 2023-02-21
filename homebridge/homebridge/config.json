@@ -65,6 +65,32 @@
             "offValue": "off"
         },
         {
+            "accessory": "mqttthing",
+            "type": "switch",
+            "name": "Gang Licht Schalter",
+            "caption": "Gang_Licht",
+            "topics": {
+                "getOn": "shellies/shelly1-5B2B93/relay/0",
+                "setOn": "shellies/shelly1-5B2B93/relay/0/command"
+            },
+            "integerValue": "false",
+            "onValue": "on",
+            "offValue": "off"
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "switch",
+            "name": "Wohnzimmer Licht Schalter",
+            "caption": "Wohnzimmer_Licht",
+            "topics": {
+                "getOn": "shellies/shelly1-2C1435/relay/0",
+                "setOn": "shellies/shelly1-2C1435/relay/0/command"
+            },
+            "integerValue": "false",
+            "onValue": "on",
+            "offValue": "off"
+        },
+        {
             "_": "_____ Beginn der Sektion Esszimmer ____",
             "accessory": "mqttthing",
             "type": "lightbulb",
