@@ -1,0 +1,14 @@
+docker run --rm influxdb:1.8.10 influxd config > influxdb.conf
+
+# enable HTTP auth
+sed -i 's/^  auth-enabled = false$/  auth-enabled = true/g' influxdb.conf
+# do any other changes you want, or replace with your own config entirely
+
+docker run --rm telegraf telegraf config > telegraf.conf
+# now modify it to tell it how to authenticate against influxdb
+sed -i 's/^#  # urls = \["http:\/\/127\.0\.0\.1:8086"\]$/  urls = \["http:\/\/influxdb:8086"\]/g' telegraf.conf
+sed -i 's/^#  # database = "telegraf"$/  database = "telegraf"/' telegraf.conf
+sed -i 's/^#  # username = "telegraf"$/  username = "telegraf"/' telegraf.conf
+sed -i 's/^#  # password = "metricsmetricsmetricsmetrics"$/  password = "<telegrafUSERpassword>"/' telegraf.conf
+# as we run inside docker, the telegraf hostname is different from our Raspberry hostname, let's change it
+sed -i 's/^  hostname = ""$/  hostname = "'${HOSTNAME}'"/' telegraf.conf

@@ -91,6 +91,22 @@
             "offValue": "off"
         },
         {
+            "accessory": "mqttthing",
+            "type": "switch",
+            "name": "Küche Unterschrank Licht Schalter",
+            "caption": "Küche_Unterschrank_Licht",
+            "topics": {
+                "getOn": {
+                    "topic": "shellyplus1-08b61fd93e1c/rpc",
+                    "apply": "return JSON.parse(message).params.on === true;"
+                },
+                "setOn": {
+                    "topic": "shellyplus1-08b61fd93e1c/rpc",
+                    "apply": "return JSON.stringify({method: \"Switch.Set\", params: {id: 0,on: (message ? true : false)}})"
+                }
+            }
+        },
+        {
             "_": "_____ Beginn der Sektion Esszimmer ____",
             "accessory": "mqttthing",
             "type": "lightbulb",

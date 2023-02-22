@@ -19,4 +19,7 @@ zigbee2mqtt/data/state.json
 
 zwave2mqtt/
 
+nodered/data/
 
+influxdb/data/
+.env
