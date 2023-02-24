@@ -109,6 +109,38 @@
         {
             "accessory": "mqttthing",
             "type": "switch",
+            "name": "Küche Deckenlicht Schalter",
+            "caption": "Küche_Deckenlicht",
+            "topics": {
+                "getOn": {
+                    "topic": "shellyplus2pm-5443b23e53b8/rpc",
+                    "apply": "return (JSON.parse(message).params.on === true & JSON.parse(message).params.id === 0);"
+                },
+                "setOn": {
+                    "topic": "shellyplus2pm-5443b23e53b8/rpc",
+                    "apply": "return JSON.stringify({method: \"Switch.Set\", params: {id: 0,on: (message ? true : false)}})"
+                }
+            }
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "switch",
+            "name": "Esstisch Licht Schalter",
+            "caption": "Esstisch_Licht",
+            "topics": {
+                "getOn": {
+                    "topic": "shellyplus2pm-5443b23e53b8/rpc",
+                    "apply": "return (JSON.parse(message).params.on === true & JSON.parse(message).params.id === 1);"
+                },
+                "setOn": {
+                    "topic": "shellyplus2pm-5443b23e53b8/rpc",
+                    "apply": "return JSON.stringify({method: \"Switch.Set\", params: {id: 1,on: (message ? true : false)}})"
+                }
+            }
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "switch",
             "name": "Schlafzimmer Dieter Licht Schalter",
             "caption": "Schlafzimmer_Dieter_Licht",
             "topics": {
@@ -221,50 +253,6 @@
             "integerValue": "false",
             "onValue": "on",
             "offValue": "off"
-        },
-        {
-            "type": "statelessProgrammableSwitch",
-            "name": "IKEA Schalter 2",
-            "caption": "IKEA Schalter 2",
-            "topics": {
-                "getSwitch": [
-                    {
-                        "topic": "zigbee2mqtt/IkeaSchalter2",
-                        "apply": "return JSON.parse(message).action;"
-                    }
-                ],
-                "getStatusLowBattery": {
-                    "topic": "zigbee2mqtt/IkeaSchalter2",
-                    "apply": "return (JSON.parse(message).battery < 20) ? 1 : 0;"
-                },
-                "getBatteryLevel": {
-                    "topic": "zigbee2mqtt/IkeaSchalter2",
-                    "apply": "return JSON.parse(message).battery;"
-                }
-            },
-            "accessory": "mqttthing",
-            "logMqtt": false,
-            "codec": "js/tradfri.js"
-        },
-        {
-            "accessory": "mqttthing",
-            "type": "lightbulb",
-            "name": "Esszimmer Stehlampe",
-            "caption": "Esszimmer Stehlampe",
-            "topics": {
-                "getOn": "zigbee2mqtt/StehlampeEsszimmer/setOn",
-                "setOn": "zigbee2mqtt/StehlampeEsszimmer/setOn",
-                "getBrightness": "zigbee2mqtt/StehlampeEsszimmer/getBrightness",
-                "setBrightness": "zigbee2mqtt/StehlampeEsszimmer/setBrightness",
-                "getColorTemperature": "zigbee2mqtt/StehlampeEsszimmer/getColorTemperature",
-                "setColorTemperature": "zigbee2mqtt/StehlampeEsszimmer/setColorTemperature"
-            },
-            "integerValue": "false",
-            "onValue": "ON",
-            "offValue": "OFF",
-            "logMqtt": false,
-            "codec": "js/tradfri.js",
-            "_": "_____ Ende der Sektion Esszimmer ____"
         }
     ],
     "platforms": [
