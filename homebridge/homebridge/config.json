@@ -39,6 +39,30 @@
             "codec": "js/tradfri.js"
         },
         {
+            "type": "statelessProgrammableSwitch",
+            "name": "Kueche Remote",
+            "caption": "Kueche_Remote",
+            "topics": {
+                "getSwitch": [
+                    {
+                        "topic": "zigbee2mqtt/KuecheFunkSchalter",
+                        "apply": "return JSON.parse(message).action;"
+                    }
+                ],
+                "getStatusLowBattery": {
+                    "topic": "zigbee2mqtt/KuecheFunkSchalter",
+                    "apply": "if (JSON.parse(message).battery < 20) return 1; else return 0;"
+                },
+                "getBatteryLevel": {
+                    "topic": "zigbee2mqtt/KuecheFunkSchalter",
+                    "apply": "return JSON.parse(message).battery;"
+                }
+            },
+            "accessory": "mqttthing",
+            "logMqtt": false,
+            "codec": "js/hue.js"
+        },
+        {
             "accessory": "mqttthing",
             "type": "switch",
             "name": "Wohnzimmer Verstaerker",

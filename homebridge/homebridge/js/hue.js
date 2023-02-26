@@ -59,21 +59,53 @@ function init( params ) {
         t.log_de(log, message, info, message)
         msg = JSON.parse(message)
         //log(msg)
+        //console.log(msg)
 
-        if (info.topic == "zigbee2mqtt/Wohnzimmerschalter") {
+        if (info.topic == "zigbee2mqtt/KuecheFunkSchalter") {
             if (["on-press","on-hold"].includes(msg.action)) {
-                publish("shellies/shellyix3-98CDAC24BCC3/input/2","1")
+                publish("shellyplus2pm-5443b23e53b8/rpc",
+                    JSON.stringify({
+                        method: "Switch.Set", 
+                        params: {
+                            id: 0,
+                            on: true
+                        }}));                
             };
-            if (["up-press","up-hold","down-press","down-hold"].includes(msg.action)) {
+            if (["up-press","up-hold"].includes(msg.action)) {
+                publish("shellyplus1-08b61fd93e1c/rpc",
+                    JSON.stringify({
+                        method: "Switch.Set", 
+                        params: {
+                            id: 0,
+                            on: true
+                        }}));                
+            };
+            if (["down-press","down-hold"].includes(msg.action)) {
+                publish("shellyplus1-08b61fd93e1c/rpc",
+                    JSON.stringify({
+                        method: "Switch.Set", 
+                        params: {
+                            id: 0,
+                            on: false
+                        }}));                
+            };
+            if (["off-press","off-hold"].includes(msg.action)) {
+                publish("shellyplus2pm-5443b23e53b8/rpc",
+                    JSON.stringify({
+                        method: "Switch.Set", 
+                        params: {
+                            id: 0,
+                            on: false
+                        }}));     
+            };
+            /* if (["up-press","up-hold","down-press","down-hold"].includes(msg.action)) {
                 publish("zigbee2mqtt/Wohnzimmer1/setBrightness",JSON.stringify({"brightness":msg.brightness}));
                 publish("zigbee2mqtt/Wohnzimmer2/setBrightness",JSON.stringify({"brightness":msg.brightness}));
                 publish("zigbee2mqtt/Wohnzimmer3/setBrightness",JSON.stringify({"brightness":msg.brightness}));
-            };   
-            if (["off-press","off-hold"].includes(msg.action)) {
-                publish("shellies/shellyix3-98CDAC24BCC3/input/2","0")
-            };
+            };*/   
         };
 
+        /*
         if (info.topic == "zigbee2mqtt/FlurSchalter") {
             if (["on-press","on-hold","up-press","up-hold"].includes(msg.action)) {
                 publish("shellies/shelly1-554C88/relay/0/command","on")
@@ -81,7 +113,7 @@ function init( params ) {
             if (["off-press","off-hold","down-press","down-hold"].includes(msg.action)) {
                 publish("shellies/shelly1-554C88/relay/0/command","off")
             };
-        }
+        } */
 
     }
 
