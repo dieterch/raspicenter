@@ -39,7 +39,7 @@ function init( params ) {
     log( msg );
     config.url = config.url ? config.url : "http://localhost:1883"; // default MQTT server is localhost
     
-    const Christbaum = new a.ToggleObj(
+    /* const Christbaum = new a.ToggleObj(
         params,
         "Christbaum",
         "shellies/shellyplug-s-6A6374/relay/0/command",
@@ -77,7 +77,7 @@ function init( params ) {
         "brightness_down",
         0,
         255,
-        20)
+        20) 
 
     const Esszimmer_Wandschalter = new a.ToggleObj(
         params,
@@ -85,14 +85,14 @@ function init( params ) {
         "shellies/shelly1-32CE66/relay/0/command",
         ["toggle"],
         "on",
-        "off")
+        "off") 
 
         const EZLichtGroup = 
-        ["zigbee2mqtt/Esszimmer1/setBrightness",
-        "zigbee2mqtt/Esszimmer2/setBrightness",
-        "zigbee2mqtt/Esszimmer3/setBrightness",
-        "zigbee2mqtt/Esszimmer4/setBrightness",
-        "zigbee2mqtt/Esszimmer5/setBrightness"];
+        ["zigbee2mqtt/Esstisch1/setBrightness",
+        "zigbee2mqtt/Esstisch2/setBrightness",
+        "zigbee2mqtt/Esstisch3/setBrightness",
+        "zigbee2mqtt/Esstisch4/setBrightness",
+        "zigbee2mqtt/Esstisch5/setBrightness"];
 
     const EZ_Decken_Slider = new a.SliderObj(
         params,
@@ -103,7 +103,7 @@ function init( params ) {
         0,
         255,
         20)
-        //}, 1000 );
+        //}, 1000 );  */
 
     /**
      * Encode message before sending.
@@ -177,10 +177,10 @@ function init( params ) {
             if (Wohnzimmer_Wandschalter1) { Wohnzimmer_Wandschalter1.toggle(info,msg.action); }
             if (WZ_Decken_Slider) { WZ_Decken_Slider.slider(info,msg.action) };
         };
-        if (info.topic == "zigbee2mqtt/IkeaSchalter2") {
+        /* if (info.topic == "zigbee2mqtt/IkeaSchalter2") {
             if (Esszimmer_Wandschalter) { Esszimmer_Wandschalter.toggle(info, msg.action); }
             if (EZ_Decken_Slider) { EZ_Decken_Slider.slider(info,msg.action) };
-        };
+        }; */
     }
 
     function encode_on( message, info, output ) {
@@ -203,7 +203,18 @@ function init( params ) {
         var b=2.54*params[2];
         result.brightness=b;
 
-        t.log_en(log, message, info, result);
+        t.log_en(log, message, info, JSON.stringify(result));
+        /* 2023_02_26, the lightbulb IKEA LED1624G9 is set to bright white
+        after startup. I cannont figure out where to configure this
+        in Zigbee2MQTT or elsewhere. I implemented the following workaround. 
+        Change of Color and Brightness is possible if not restarted.
+        Dieter Chvatal */
+        if ((result.color.x === '0.3119') && 
+            (result.color.y === '0.3122') && 
+            (result.brightness === 254)) {
+                result = { color: { x: '0.4345', y: '0.3922' }, brightness: 127 }
+                console.log("Applying workaround after startup to ",info.topic)
+        } 
         return JSON.stringify(result);
     }
 

@@ -155,16 +155,16 @@
             }
         },
         {
-            "_": "_____ Beginn der Sektion Esszimmer ____",
+            "_": "_____ Beginn der Sektion Esstisch ____",
             "accessory": "mqttthing",
             "type": "lightbulb",
-            "name": "Esszimmer1",
-            "caption": "Esszimmer1",
+            "name": "Esstisch1",
+            "caption": "Esstisch1",
             "topics": {
-                "getOn": "zigbee2mqtt/Esszimmer1/setOn",
-                "setOn": "zigbee2mqtt/Esszimmer1/setOn",
-                "getBrightness": "zigbee2mqtt/Esszimmer1/getBrightness",
-                "setBrightness": "zigbee2mqtt/Esszimmer1/setBrightness"
+                "getOn": "zigbee2mqtt/Esstisch1/setOn",
+                "setOn": "zigbee2mqtt/Esstisch1/setOn",
+                "getBrightness": "zigbee2mqtt/Esstisch1/getBrightness",
+                "setBrightness": "zigbee2mqtt/Esstisch1/setBrightness"
             },
             "integerValue": "false",
             "onValue": "ON",
@@ -175,15 +175,15 @@
         {
             "accessory": "mqttthing",
             "type": "lightbulb",
-            "name": "Esszimmer2",
-            "caption": "Esszimmer2",
+            "name": "Esstisch2",
+            "caption": "Esstisch2",
             "topics": {
-                "getOn": "zigbee2mqtt/Esszimmer2/setOn",
-                "setOn": "zigbee2mqtt/Esszimmer2/setOn",
-                "getBrightness": "zigbee2mqtt/Esszimmer2/getBrightness",
-                "setBrightness": "zigbee2mqtt/Esszimmer2/setBrightness",
-                "getColorTemperature": "zigbee2mqtt/Esszimmer2/getColorTemperature",
-                "setColorTemperature": "zigbee2mqtt/Esszimmer2/setColorTemperature"
+                "getOn": "zigbee2mqtt/Esstisch2/setOn",
+                "setOn": "zigbee2mqtt/Esstisch2/setOn",
+                "getBrightness": "zigbee2mqtt/Esstisch2/getBrightness",
+                "setBrightness": "zigbee2mqtt/Esstisch2/setBrightness",
+                "getColorTemperature": "zigbee2mqtt/Esstisch2/getColorTemperature",
+                "setColorTemperature": "zigbee2mqtt/Esstisch2/setColorTemperature"
             },
             "integerValue": "false",
             "onValue": "ON",
@@ -194,13 +194,13 @@
         {
             "accessory": "mqttthing",
             "type": "lightbulb",
-            "name": "Esszimmer3",
-            "caption": "Esszimmer3",
+            "name": "Esstisch3",
+            "caption": "Esstisch3",
             "topics": {
-                "getOn": "zigbee2mqtt/Esszimmer3/setOn",
-                "setOn": "zigbee2mqtt/Esszimmer3/setOn",
-                "getBrightness": "zigbee2mqtt/Esszimmer3/getBrightness",
-                "setBrightness": "zigbee2mqtt/Esszimmer3/setBrightness"
+                "getOn": "zigbee2mqtt/Esstisch3/setOn",
+                "setOn": "zigbee2mqtt/Esstisch3/setOn",
+                "getBrightness": "zigbee2mqtt/Esstisch3/getBrightness",
+                "setBrightness": "zigbee2mqtt/Esstisch3/setBrightness"
             },
             "integerValue": "false",
             "onValue": "ON",
@@ -211,12 +211,12 @@
         {
             "accessory": "mqttthing",
             "type": "lightbulb",
-            "name": "Esszimmer4",
+            "name": "Esstisch4",
             "topics": {
-                "getOn": "zigbee2mqtt/Esszimmer4/setOn",
-                "setOn": "zigbee2mqtt/Esszimmer4/setOn",
-                "getHSV": "zigbee2mqtt/Esszimmer4/getHSV",
-                "setHSV": "zigbee2mqtt/Esszimmer4/setHSV"
+                "getOn": "zigbee2mqtt/Esstisch4/setOn",
+                "setOn": "zigbee2mqtt/Esstisch4/setOn",
+                "getHSV": "zigbee2mqtt/Esstisch4/getHSV",
+                "setHSV": "zigbee2mqtt/Esstisch4/setHSV"
             },
             "logMqtt": false,
             "onValue": "ON",
@@ -227,32 +227,19 @@
         {
             "accessory": "mqttthing",
             "type": "lightbulb",
-            "name": "Esszimmer5",
+            "name": "Esstisch5",
             "#url": "http://localhost:1883",
             "topics": {
-                "getOn": "zigbee2mqtt/Esszimmer5/setOn",
-                "setOn": "zigbee2mqtt/Esszimmer5/setOn",
-                "getHSV": "zigbee2mqtt/Esszimmer5/getHSV",
-                "setHSV": "zigbee2mqtt/Esszimmer5/setHSV"
+                "getOn": "zigbee2mqtt/Esstisch5/setOn",
+                "setOn": "zigbee2mqtt/Esstisch5/setOn",
+                "getHSV": "zigbee2mqtt/Esstisch5/getHSV",
+                "setHSV": "zigbee2mqtt/Esstisch5/setHSV"
             },
             "logMqtt": false,
             "onValue": "ON",
             "offValue": "OFF",
             "otherValueOff": true,
             "codec": "js/tradfri.js"
-        },
-        {
-            "accessory": "mqttthing",
-            "type": "switch",
-            "name": "Esszimmer Licht Schalter",
-            "caption": "Esszimmer_Licht",
-            "topics": {
-                "getOn": "shellies/shelly1-32CE66/relay/0",
-                "setOn": "shellies/shelly1-32CE66/relay/0/command"
-            },
-            "integerValue": "false",
-            "onValue": "on",
-            "offValue": "off"
         }
     ],
     "platforms": [
