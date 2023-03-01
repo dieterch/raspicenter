@@ -210,15 +210,24 @@ function init( params ) {
         Change of Color and Brightness is possible if not restarted.
         Dieter Chvatal */
         if ((result.color.x === '0.3119') && 
-            (result.color.y === '0.3122') && 
-            (result.brightness === 254)) {
-                result = { color: { x: '0.4345', y: '0.3922' }, brightness: 127 }
-                console.log("Applying workaround after startup to ",info.topic)
+            (result.color.y === '0.3122')) {
+                // result = { color: { x: '0.4345', y: '0.3922' }, brightness: 127 }
+                result.color.x = '0.4345'
+                result.color.y = '0.3922'
+                log(`HUE encode color HSV, Applying workaround after startup.`)
         } 
         return JSON.stringify(result);
     }
 
     function decode_HSV( message, info ) {
+        let params=message.split(",")
+        let result={}
+        let rgb=t.ScaledHSVtoRGB(params[0],params[1],100)
+        let xy=t.rgb_to_cie(rgb.r,rgb.g,rgb.b);
+
+        result.color={x:xy[0],y:xy[1]};
+        var b=2.54*params[2];
+        result.brightness=b;
         t.log_de(log, message, info, message)
         return message;
     }
