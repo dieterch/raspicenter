@@ -63,6 +63,30 @@
             "codec": "js/hue.js"
         },
         {
+            "type": "statelessProgrammableSwitch",
+            "name": "Esstisch Remote",
+            "caption": "Esstisch_Remote",
+            "topics": {
+                "getSwitch": [
+                    {
+                        "topic": "zigbee2mqtt/EsstischFunkSchalter",
+                        "apply": "return JSON.parse(message).action;"
+                    }
+                ],
+                "getStatusLowBattery": {
+                    "topic": "zigbee2mqtt/EsstischFunkSchalter",
+                    "apply": "if (JSON.parse(message).battery < 20) return 1; else return 0;"
+                },
+                "getBatteryLevel": {
+                    "topic": "zigbee2mqtt/EsstischFunkSchalter",
+                    "apply": "return JSON.parse(message).battery;"
+                }
+            },
+            "accessory": "mqttthing",
+            "logMqtt": false,
+            "codec": "js/hue.js"
+        },
+        {
             "accessory": "mqttthing",
             "type": "switch",
             "name": "Wohnzimmer Verstaerker",

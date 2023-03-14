@@ -98,12 +98,39 @@ function init( params ) {
                             on: false
                         }}));     
             };
-            /* if (["up-press","up-hold","down-press","down-hold"].includes(msg.action)) {
-                publish("zigbee2mqtt/Wohnzimmer1/setBrightness",JSON.stringify({"brightness":msg.brightness}));
-                publish("zigbee2mqtt/Wohnzimmer2/setBrightness",JSON.stringify({"brightness":msg.brightness}));
-                publish("zigbee2mqtt/Wohnzimmer3/setBrightness",JSON.stringify({"brightness":msg.brightness}));
-            };*/   
-        };
+        }
+        /* if (["up-press","up-hold","down-press","down-hold"].includes(msg.action)) {
+            publish("zigbee2mqtt/Wohnzimmer1/setBrightness",JSON.stringify({"brightness":msg.brightness}));
+            publish("zigbee2mqtt/Wohnzimmer2/setBrightness",JSON.stringify({"brightness":msg.brightness}));
+            publish("zigbee2mqtt/Wohnzimmer3/setBrightness",JSON.stringify({"brightness":msg.brightness}));
+        };*/
+        if (info.topic == "zigbee2mqtt/EsstischFunkSchalter") {
+            if (["on-press","on-hold"].includes(msg.action)) {
+                publish("shellyplus2pm-5443b23e53b8/rpc",
+                    JSON.stringify({
+                        method: "Switch.Set", 
+                        params: {
+                            id: 1,
+                            on: true
+                        }}));                
+            };
+            if (["up-press","up-hold","down-press","down-hold"].includes(msg.action)) {
+                publish("zigbee2mqtt/Esstisch1/setBrightness",JSON.stringify({"brightness":msg.brightness}));
+                publish("zigbee2mqtt/Esstisch2/setBrightness",JSON.stringify({"brightness":msg.brightness}));
+                publish("zigbee2mqtt/Esstisch3/setBrightness",JSON.stringify({"brightness":msg.brightness}));
+                publish("zigbee2mqtt/Esstisch4/setBrightness",JSON.stringify({"brightness":msg.brightness}));
+                publish("zigbee2mqtt/Esstisch5/setBrightness",JSON.stringify({"brightness":msg.brightness}));
+            };
+            if (["off-press","off-hold"].includes(msg.action)) {
+                publish("shellyplus2pm-5443b23e53b8/rpc",
+                    JSON.stringify({
+                        method: "Switch.Set", 
+                        params: {
+                            id: 1,
+                            on: false
+                        }}));     
+            }; 
+    };
 
         /*
         if (info.topic == "zigbee2mqtt/FlurSchalter") {
