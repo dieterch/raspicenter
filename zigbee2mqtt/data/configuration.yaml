@@ -16,11 +16,6 @@ devices:
   '0x0017880104f75e09':
     friendly_name: KuecheFunkSchalter
     legacy: true
-  '0x000b57fffec7f9e4':
-    friendly_name: Esstisch5
-    color_sync: true
-  '0x90fd9ffffe64b23c':
-    friendly_name: Esstisch4
   '0x000b3cfffef795b3':
     friendly_name: Esstisch1
   '0x90fd9ffffe04a728':
@@ -29,6 +24,10 @@ devices:
     friendly_name: Esstisch3
   '0x00178801086b410b':
     friendly_name: EsstischFunkSchalter
+  '0x000b57fffec7f9e4':
+    friendly_name: Esstisch5
+  '0x90fd9ffffe64b23c':
+    friendly_name: Esstisch4
 availability: true
 blocklist: []
 groups:
@@ -38,5 +37,3 @@ groups:
       - 0x000b3cfffef795b3/1
       - 0x90fd9ffffe04a728/1
       - 0x000d6ffffea91d0a/1
-      - 0x90fd9ffffe64b23c/1
-      - 0x000b57fffec7f9e4/1
