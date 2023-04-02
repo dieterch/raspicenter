@@ -102,8 +102,8 @@
         {
             "accessory": "mqttthing",
             "type": "switch",
-            "name": "Wohnzimmer Funk Gitarrenkabel",
-            "caption": "Wohnzimmer Funk Gitarrenkabel",
+            "name": "Wohnzimmer Beocreate",
+            "caption": "Wohnzimmer Beocreate",
             "topics": {
                 "getOn": "shellies/shellyplug-s-6A6374/relay/0",
                 "setOn": "shellies/shellyplug-s-6A6374/relay/0/command"
