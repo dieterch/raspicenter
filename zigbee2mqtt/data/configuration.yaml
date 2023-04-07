@@ -28,6 +28,8 @@ devices:
     friendly_name: Esstisch5
   '0x90fd9ffffe64b23c':
     friendly_name: Esstisch4
+  '0x0017880108704513':
+    friendly_name: CouchFunkSchalter
 availability: true
 blocklist: []
 groups:

@@ -130,7 +130,16 @@ function init( params ) {
                             on: false
                         }}));     
             }; 
-    };
+        };
+
+        if (info.topic == "zigbee2mqtt/CouchFunkSchalter") {
+            if (["on-press","on-hold","up-press","up-hold"].includes(msg.action)) {
+                publish("shellies/shelly1-2C1435/relay/0/command","on")
+            };
+            if (["off-press","off-hold","down-press","down-hold"].includes(msg.action)) {
+                publish("shellies/shelly1-2C1435/relay/0/command","off")
+            };
+        };
 
         /*
         if (info.topic == "zigbee2mqtt/FlurSchalter") {

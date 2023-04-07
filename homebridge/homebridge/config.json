@@ -87,6 +87,30 @@
             "codec": "js/hue.js"
         },
         {
+            "type": "statelessProgrammableSwitch",
+            "name": "Couch Remote",
+            "caption": "Couch_Remote",
+            "topics": {
+                "getSwitch": [
+                    {
+                        "topic": "zigbee2mqtt/CouchFunkSchalter",
+                        "apply": "return JSON.parse(message).action;"
+                    }
+                ],
+                "getStatusLowBattery": {
+                    "topic": "zigbee2mqtt/CouchFunkSchalter",
+                    "apply": "if (JSON.parse(message).battery < 20) return 1; else return 0;"
+                },
+                "getBatteryLevel": {
+                    "topic": "zigbee2mqtt/CouchFunkSchalter",
+                    "apply": "return JSON.parse(message).battery;"
+                }
+            },
+            "accessory": "mqttthing",
+            "logMqtt": false,
+            "codec": "js/hue.js"
+        },
+        {
             "accessory": "mqttthing",
             "type": "switch",
             "name": "Wohnzimmer Verstaerker",
