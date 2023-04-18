@@ -151,6 +151,7 @@
         },
         {
             "accessory": "mqttthing",
+            "url": "http://192.168.15.190:1883",
             "type": "switch",
             "name": "Wohnzimmer Licht Schalter",
             "caption": "Wohnzimmer_Licht",
