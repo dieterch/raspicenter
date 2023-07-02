@@ -11,31 +11,29 @@ frontend:
   port: 8080
   host: 0.0.0.0
 serial:
+  adapter: deconz
   port: /dev/ttyACM0
 devices:
   '0x0017880104f75e09':
     friendly_name: KuecheFunkSchalter
     legacy: true
-  '0x000b3cfffef795b3':
-    friendly_name: Esstisch1
+  '0x00178801086b410b':
+    friendly_name: EsstischFunkSchalter
+  '0x0017880108704513':
+    friendly_name: CouchFunkSchalter
+  '0x000b57fffec7f9e4':
+    friendly_name: Esstisch5
   '0x90fd9ffffe04a728':
     friendly_name: Esstisch2
   '0x000d6ffffea91d0a':
     friendly_name: Esstisch3
-  '0x00178801086b410b':
-    friendly_name: EsstischFunkSchalter
-  '0x000b57fffec7f9e4':
-    friendly_name: Esstisch5
+  '0x000b3cfffef795b3':
+    friendly_name: Esstisch1
   '0x90fd9ffffe64b23c':
     friendly_name: Esstisch4
-  '0x0017880108704513':
-    friendly_name: CouchFunkSchalter
 availability: true
 blocklist: []
 groups:
   '1':
     friendly_name: MyEsstisch
-    devices:
-      - 0x000b3cfffef795b3/1
-      - 0x90fd9ffffe04a728/1
-      - 0x000d6ffffea91d0a/1
+    devices: []

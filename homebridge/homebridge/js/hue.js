@@ -105,12 +105,21 @@ function init( params ) {
             publish("zigbee2mqtt/Wohnzimmer3/setBrightness",JSON.stringify({"brightness":msg.brightness}));
         };*/
         if (info.topic == "zigbee2mqtt/EsstischFunkSchalter") {
-            if (["on-press","on-hold"].includes(msg.action)) {
+            if (["on-press"].includes(msg.action)) {
                 publish("shellyplus2pm-5443b23e53b8/rpc",
                     JSON.stringify({
                         method: "Switch.Set", 
                         params: {
                             id: 1,
+                            on: true
+                        }}));
+            };
+            if (["on-hold"].includes(msg.action)) {
+                publish("shellyplus2pm-5443b23e53b8/rpc",
+                    JSON.stringify({
+                        method: "Switch.Set", 
+                        params: {
+                            id: 0,
                             on: true
                         }}));                
             };
@@ -121,12 +130,21 @@ function init( params ) {
                 publish("zigbee2mqtt/Esstisch4/setBrightness",JSON.stringify({"brightness":msg.brightness}));
                 publish("zigbee2mqtt/Esstisch5/setBrightness",JSON.stringify({"brightness":msg.brightness}));
             };
-            if (["off-press","off-hold"].includes(msg.action)) {
+            if (["off-press"].includes(msg.action)) {
                 publish("shellyplus2pm-5443b23e53b8/rpc",
                     JSON.stringify({
                         method: "Switch.Set", 
                         params: {
                             id: 1,
+                            on: false
+                        }}));     
+            }; 
+            if (["off-hold"].includes(msg.action)) {
+                publish("shellyplus2pm-5443b23e53b8/rpc",
+                    JSON.stringify({
+                        method: "Switch.Set", 
+                        params: {
+                            id: 0,
                             on: false
                         }}));     
             }; 
