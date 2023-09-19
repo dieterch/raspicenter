@@ -11,3 +11,13 @@ all parts of this system are docker containers
 
 no cloud connection
 no regular updates braking the home autionation every 2 month (Apple Homekit with tradfri and HUE routers)
+
+### Installation.
+RaspberryPi 4
+dockerengine
+git pull the repository
+
+### Operation 
+'. _start' ... download&start all docker containers
+'. _stop'  ... stop all containers & networks.
+
