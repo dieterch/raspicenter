@@ -18,6 +18,6 @@ dockerengine
 git pull the repository
 
 ### Operation 
-'. _start' ... download&start all docker containers
-'. _stop'  ... stop all containers & networks.
+- . _start ... download&start all docker containers
+- . _stop  ... stop all containers & networks.
 
