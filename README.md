@@ -17,7 +17,14 @@ RaspberryPi 4
 dockerengine
 git pull the repository
 
-### Operation 
-- . _start ... download&start all docker containers
-- . _stop  ... stop all containers & networks.
+### Operation
+```
+  . _start
+```
+download & start all docker containers
+
+```
+  . _stop
+```
+stop all containers & networks.
 
