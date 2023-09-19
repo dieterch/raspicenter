@@ -15,6 +15,82 @@
             "accessory": "DummySwitch"
         },
         {
+            "accessory": "mqttthing",
+            "type": "windowCovering",
+            "name": "Wohnzimmer Fenster Jalousie",
+            "topics": {
+                "getCurrentPosition": "somfy/shades/1/position",
+                "setTargetPosition": "somfy/shades/1/target/set",
+                "getTargetPosition": "somfy/shades/1/target",
+                "getPositionState": "somfy/shades/1/direction",
+                "setHoldPosition": "somfy/shades/1/target"
+            },
+            "positionStateValues": [
+                1,
+                -1,
+                0
+            ],
+            "minPosition": 0,
+            "maxPosition": 100
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "windowCovering",
+            "name": "Wohnzimmer Tür Jalousie",
+            "topics": {
+                "getCurrentPosition": "somfy/shades/2/position",
+                "setTargetPosition": "somfy/shades/2/target/set",
+                "getTargetPosition": "somfy/shades/2/target",
+                "getPositionState": "somfy/shades/2/direction",
+                "setHoldPosition": "somfy/shades/2/target"
+            },
+            "positionStateValues": [
+                1,
+                -1,
+                0
+            ],
+            "minPosition": 0,
+            "maxPosition": 100
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "windowCovering",
+            "name": "Schlafzimmer Tür Jalousie",
+            "topics": {
+                "getCurrentPosition": "somfy/shades/3/position",
+                "setTargetPosition": "somfy/shades/3/target/set",
+                "getTargetPosition": "somfy/shades/3/target",
+                "getPositionState": "somfy/shades/3/direction",
+                "setHoldPosition": "somfy/shades/3/target"
+            },
+            "positionStateValues": [
+                1,
+                -1,
+                0
+            ],
+            "minPosition": 0,
+            "maxPosition": 100
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "windowCovering",
+            "name": "Schlafzimmer Fenster Jalousie",
+            "topics": {
+                "getCurrentPosition": "somfy/shades/4/position",
+                "setTargetPosition": "somfy/shades/4/target/set",
+                "getTargetPosition": "somfy/shades/4/target",
+                "getPositionState": "somfy/shades/4/direction",
+                "setHoldPosition": "somfy/shades/4/target"
+            },
+            "positionStateValues": [
+                1,
+                -1,
+                0
+            ],
+            "minPosition": 0,
+            "maxPosition": 100
+        },
+        {
             "type": "statelessProgrammableSwitch",
             "name": "IKEA Schalter 1",
             "caption": "IKEA Schalter 1",
