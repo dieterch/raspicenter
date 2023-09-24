@@ -210,10 +210,10 @@ function init( params ) {
         // log( msg );
         // log(`msg = ${msg}, message = ${message}`)
         if (info.topic == "zigbee2mqtt/IkeaSchalter1") {
-            if (ShadeSZWindow) { setTimeout(move, 4000, ShadeSZWindow, info, msg) } 
-            if (ShadeSZDoor)   { setTimeout(move, 3000, ShadeSZDoor, info, msg) } 
-            if (ShadeWZDoor)   { setTimeout(move, 2000, ShadeWZDoor, info, msg) } 
-            if (ShadeWZWindow) { setTimeout(move, 1000, ShadeWZWindow, info, msg) } 
+            if (ShadeSZWindow) { setTimeout(move, 45000, ShadeSZWindow, info, msg) } 
+            if (ShadeSZDoor)   { setTimeout(move, 30000, ShadeSZDoor, info, msg) } 
+            if (ShadeWZDoor)   { setTimeout(move, 15000, ShadeWZDoor, info, msg) } 
+            if (ShadeWZWindow) { setTimeout(move, 0, ShadeWZWindow, info, msg) } 
         }
         /*if (info.topic == "zigbee2mqtt/IkeaSchalter1") {
             if (Christbaum) { Christbaum.toggle(info, msg.action); }
