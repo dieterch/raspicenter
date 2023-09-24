@@ -31,6 +31,8 @@ devices:
     friendly_name: Esstisch1
   '0x90fd9ffffe64b23c':
     friendly_name: Esstisch4
+  '0x000b57fffed93eb3':
+    friendly_name: IkeaSchalter1
 availability: true
 blocklist: []
 groups:

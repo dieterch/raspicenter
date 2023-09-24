@@ -38,7 +38,39 @@ function init( params ) {
     let msg = `--> tradfri.js. ${config._ ? config._ : ''}`;
     log( msg );
     config.url = config.url ? config.url : "http://localhost:1883"; // default MQTT server is localhost
-    
+
+    const ShadeWZWindow = new a.ToggleObj(
+        params,
+        "ShadeWZWindow",
+        "somfy/shades/1/target/set",
+        ["toggle"],
+        "100",
+        "50")
+
+    const ShadeWZDoor = new a.ToggleObj(
+        params,
+        "ShadeWZDoor",
+        "somfy/shades/2/target/set",
+        ["toggle"],
+        "100",
+        "50")
+
+    const ShadeSZDoor = new a.ToggleObj(
+        params,
+        "ShadeSZDoor",
+        "somfy/shades/3/target/set",
+        ["toggle"],
+        "100",
+        "50")
+
+    const ShadeSZWindow = new a.ToggleObj(
+        params,
+        "ShadeSZWindow",
+        "somfy/shades/4/target/set",
+        ["toggle"],
+        "100",
+        "25")
+
     /* const Christbaum = new a.ToggleObj(
         params,
         "Christbaum",
@@ -167,16 +199,28 @@ function init( params ) {
         output(message);
     }
 
+    function move (Shade, info, msg) {
+        //log(`name = ${Shade.name}, topic = ${info.topic}, action = ${msg.action}`);
+        Shade.toggle(info, msg.action);
+    }
+
     function decode_Switch( message, info, output ) {
         t.log_de(log, message, info, message)
         let msg = JSON.parse(message)
+        // log( msg );
         // log(`msg = ${msg}, message = ${message}`)
         if (info.topic == "zigbee2mqtt/IkeaSchalter1") {
+            if (ShadeSZWindow) { setTimeout(move, 4000, ShadeSZWindow, info, msg) } 
+            if (ShadeSZDoor)   { setTimeout(move, 3000, ShadeSZDoor, info, msg) } 
+            if (ShadeWZDoor)   { setTimeout(move, 2000, ShadeWZDoor, info, msg) } 
+            if (ShadeWZWindow) { setTimeout(move, 1000, ShadeWZWindow, info, msg) } 
+        }
+        /*if (info.topic == "zigbee2mqtt/IkeaSchalter1") {
             if (Christbaum) { Christbaum.toggle(info, msg.action); }
             if (LichterKette) { LichterKette.toggle(info,msg.action); }
             if (Wohnzimmer_Wandschalter1) { Wohnzimmer_Wandschalter1.toggle(info,msg.action); }
             if (WZ_Decken_Slider) { WZ_Decken_Slider.slider(info,msg.action) };
-        };
+        }; */
         /* if (info.topic == "zigbee2mqtt/IkeaSchalter2") {
             if (Esszimmer_Wandschalter) { Esszimmer_Wandschalter.toggle(info, msg.action); }
             if (EZ_Decken_Slider) { EZ_Decken_Slider.slider(info,msg.action) };
