@@ -24,3 +24,6 @@ nodered/data/
 
 influxdb/data/
 .env
+
+dVueCutter/VueCutter
+elektor/data

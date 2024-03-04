@@ -1,0 +1,16 @@
+services:
+  web:
+    build: .
+    privileged: true
+    ports:
+      - "8200:5200"
+    volumes:
+      - /etc/smbcredentials:/etc/smbcredentials:ro
+      - ./VueCutter:/code
+    restart: unless-stopped
+    environment:
+      FLASK_DEBUG: "true"
+      IN_DOCKER: "true"
+  redis:
+    image: "redis:alpine"
+    restart: unless-stopped

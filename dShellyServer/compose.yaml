@@ -1,0 +1,14 @@
+services:
+  web:
+    build: .
+    privileged: true
+    network_mode: "host"
+    #ports:
+    #  - "8500:5550"
+    volumes:
+      - /var/lib/misc/dnsmasq.leases:/var/lib/misc/dnsmasq.leases:ro
+      - ./shellyserver:/code
+    restart: unless-stopped    
+    environment:
+      FLASK_DEBUG: "true"
+      IN_DOCKER: "true"

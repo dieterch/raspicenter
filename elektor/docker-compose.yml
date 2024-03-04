@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "9080:80"
+    volumes:
+      - ./data:/usr/share/nginx/html
+    restart: unless-stopped
+    #entrypoint: ["ls","-al", "/usr/share/nginx/html"]

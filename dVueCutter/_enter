@@ -1,0 +1,1 @@
+docker run -it --rm dvuecutter-web-1 bash

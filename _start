@@ -3,6 +3,8 @@ docker-compose -f zigbee2mqtt/docker-compose.yml  up -d
 ###docker-compose -f zwave2mqtt/docker-compose.yml  up -d
 ###docker-compose -f zwavejs2mqtt/docker-compose.yml  up -d
 docker-compose -f homebridge/docker-compose.yml  up -d
-docker-compose -f redis/docker-compose.yml up -d
+###docker-compose -f redis/docker-compose.yml up -d
 ###docker-compose -f nodered/docker-compose.yml up -d
 docker-compose -f influxdb/docker-compose.yml up -d
+docker compose -f dVueCutter/compose.yaml up -d
+docker compose -f elektor/docker-compose.yml up -d

@@ -1,0 +1,2 @@
+# mount -t cifs -o credentials=/etc/smbcredentials //192.168.15.10/server/Zeitschriften/Elektor /root/docker/elektor/data
+docker compose up -d
