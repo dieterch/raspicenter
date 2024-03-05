@@ -8,3 +8,4 @@ docker-compose -f influxdb/docker-compose.yml  down
 docker-compose -f redis/docker-compose.yml  down
 docker compose -f dVueCutter/compose.yaml down
 docker compose -f elektor/docker-compose.yml down
+docker compose -f dShellyServer/compose.yaml down

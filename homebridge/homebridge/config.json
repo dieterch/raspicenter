@@ -189,8 +189,8 @@
         {
             "accessory": "mqttthing",
             "type": "switch",
-            "name": "Wohnzimmer Verstaerker",
-            "caption": "Wohnzimmer Verstaerker",
+            "name": "Wohnzimmer Blumenlicht",
+            "caption": "Wohnzimmer Blumenlicht",
             "topics": {
                 "getOn": "shellies/shellyplug-s-040D25/relay/0",
                 "setOn": "shellies/shellyplug-s-040D25/relay/0/command"
@@ -228,15 +228,18 @@
         {
             "accessory": "mqttthing",
             "type": "switch",
-            "name": "Wohnzimmer Licht Schalter",
-            "caption": "Wohnzimmer_Licht",
+            "name": "Wohnzimmer Decke Licht Schalter",
+            "caption": "Wohnzimmer_Deckenlicht",
             "topics": {
-                "getOn": "shellies/shelly1-2C1435/relay/0",
-                "setOn": "shellies/shelly1-2C1435/relay/0/command"
-            },
-            "integerValue": "false",
-            "onValue": "on",
-            "offValue": "off"
+                "getOn": {
+                    "topic": "shelly1pmminig3-ecda3bc405dc/rpc",
+                    "apply": "return JSON.parse(message).params.on === true;"
+                },
+                "setOn": {
+                    "topic": "shelly1pmminig3-ecda3bc405dc/rpc",
+                    "apply": "return JSON.stringify({method: \"Switch.Set\", params: {id: 0,on: (message ? true : false)}})"
+                }
+            }
         },
         {
             "accessory": "mqttthing",

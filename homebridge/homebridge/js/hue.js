@@ -152,7 +152,14 @@ function init( params ) {
 
         if (info.topic == "zigbee2mqtt/CouchFunkSchalter") {
             if (["on-press","on-hold"].includes(msg.action)) {
-                publish("shellies/shelly1-2C1435/relay/0/command","on")
+                //publish("shellies/shelly1-2C1435/relay/0/command","on")
+                publish("shelly1pmminig3-ecda3bc405dc/rpc",
+                JSON.stringify({
+                    method: "Switch.Set", 
+                    params: {
+                        id: 0,
+                        on: true
+                    }}));    
             };
             if (["up-press","up-hold"].includes(msg.action)) {
                 publish("shellyplus2pm-5443b23e53b8/rpc",
@@ -173,7 +180,14 @@ function init( params ) {
                         }}));     
             };             
             if (["off-press","off-hold"].includes(msg.action)) {
-                publish("shellies/shelly1-2C1435/relay/0/command","off")
+                //publish("shellies/shelly1-2C1435/relay/0/command","off")
+                publish("shelly1pmminig3-ecda3bc405dc/rpc",
+                JSON.stringify({
+                    method: "Switch.Set", 
+                    params: {
+                        id: 0,
+                        on: false
+                    }}));    
             };
         };
 

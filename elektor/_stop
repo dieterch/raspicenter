@@ -1,2 +1,2 @@
 docker compose down
-# umount -f /root/docker/elektor/data
+# umount -f /usr/local/src/docker/elektor/data
