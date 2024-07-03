@@ -244,6 +244,22 @@
         {
             "accessory": "mqttthing",
             "type": "switch",
+            "name": "Abstellkammer Licht Schalter",
+            "caption": "Abstellkammer_Deckenlicht",
+            "topics": {
+                "getOn": {
+                    "topic": "shelly1minig3-54320450e900/rpc",
+                    "apply": "return JSON.parse(message).params.on === true;"
+                },
+                "setOn": {
+                    "topic": "shelly1minig3-54320450e900/rpc",
+                    "apply": "return JSON.stringify({method: \"Switch.Set\", params: {id: 0,on: (message ? true : false)}})"
+                }
+            }
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "switch",
             "name": "Küche Unterschrank Licht Schalter",
             "caption": "Küche_Unterschrank_Licht",
             "topics": {
